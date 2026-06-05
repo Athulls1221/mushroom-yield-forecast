@@ -56,5 +56,37 @@ These visualizations help identify trends, clusters, and potential nonlinear rel
 
 The EDA phase provided insight into the relationships between sensor measurements and mushroom yield. These findings will guide feature selection and model development in the next phase of the project.
 
+# EDA Findings
+
+## Scatter Plots Created
+
+The following scatter plots were generated and saved as PNG files:
+
+* humidity_vs_yield.png
+* temperature_vs_yield.png
+* co2_vs_yield.png
+
+A correlation heatmap was also generated:
+
+* corr_heatmap.png
+
+## Nonlinear Patterns and Clusters
+
+* The scatter plots were inspected for trends, clusters, and unusual observations.
+* No obvious extreme outliers were observed in the dataset.
+* Some relationships may not be perfectly linear, indicating that environmental variables can affect mushroom growth in complex ways.
+* Scatter plots provide additional insight beyond simple correlation coefficients.
+
+## Mushroom Biology Takeaways
+
+* Humidity is an important environmental factor because mushrooms require high moisture levels for healthy growth and fruiting.
+* Temperature influences metabolic activity and can affect mushroom yield when conditions move away from the optimal growing range.
+* CO₂ concentration impacts gas exchange within the growing environment and may influence development and harvest weight.
+* Yield appears to be related to multiple environmental factors rather than a single sensor measurement.
+* Environmental variables should be retained as candidate features for predictive modeling in later project phases.
+
+## Caveat
+
+Correlation does not imply causation. Relationships observed during EDA suggest possible associations, but additional modeling and experimentation are required to confirm causal effects.
 
 
