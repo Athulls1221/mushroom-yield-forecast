@@ -16,3 +16,10 @@ Path("reports/data_quality.md").write_text("\n".join(report), encoding="utf-8")
 
 print("EDA report generated successfully!")
 print("Saved to reports/data_quality.md")
+
+report.append("\n## Insights\n")
+
+report.append(
+    "Humidity values are concentrated within a narrow range, "
+    "indicating stable polyhouse environmental control."
+)
