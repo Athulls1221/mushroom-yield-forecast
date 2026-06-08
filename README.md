@@ -127,4 +127,29 @@ git commit -m "feat: add new functionality"
 git push
 
 ```
+----------------------------------------------------------------------------------------------
+
+## Day 7 Feature Engineering
+
+### Features Used
+
+| Feature                | Formula                            |
+| ---------------------- | ---------------------------------- |
+| temperature_c          | Raw temperature value              |
+| humidity_pct           | Raw humidity value                 |
+| co2_ppm                | Raw CO₂ concentration              |
+| temp_humid_interaction | temperature_c × humidity_pct ÷ 100 |
+
+### Scaling
+
+MinMaxScaler was applied to all feature columns:
+
+scaled_value = (x - min) / (max - min)
+
+The fitted scaler is saved as:
+
+models/minmax_scaler.joblib
+
+Note: For learning purposes, the scaler was fitted on the full cleaned dataset. In a production pipeline, scaling should be fitted only on training data to prevent data leakage.
+
 
