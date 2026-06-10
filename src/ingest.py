@@ -20,5 +20,7 @@ df = pd.read_csv(
 print(df.shape)
 print(df.dtypes)
 print(df.head())
+print(df.tail())
+
 
 df.to_parquet(INTERIM / "01_loaded.parquet", index=False)
