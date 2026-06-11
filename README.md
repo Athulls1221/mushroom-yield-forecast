@@ -214,4 +214,88 @@ The following practices were used to prevent data leakage:
 3. The scaler was fitted only on training data.
 4. The test set remained isolated for final model evaluation.
 
+## Day 9 – Baseline Linear Regression Model
+
+### Overview
+
+A baseline Linear Regression model was trained to predict mushroom yield using scaled environmental features.
+
+### Input Features
+
+* temperature_c
+* humidity_pct
+* co2_ppm
+
+### Target Variable
+
+* yield_kg
+
+### Model
+
+The model was trained using Scikit-Learn's `LinearRegression`.
+
+### Evaluation Metrics
+
+| Metric | Value   |
+| ------ | ------- |
+| MAE    | 0.42 kg |
+| RMSE   | 0.54 kg |
+| R²     | 0.427   |
+
+### Interpretation
+
+The baseline model explains approximately 42.7% of the variation in mushroom yield. While the model captures meaningful relationships between environmental conditions and yield, a significant portion of variability remains unexplained. This suggests that additional features or nonlinear relationships may improve performance.
+
+### Saved Artifacts
+
+* `models/linear_regression.joblib`
+* `reports/metrics_linear.json`
+
+---
+
+## Day 10 – Residual Analysis & Model Diagnostics
+
+### Objective
+
+Residual analysis was performed to evaluate model performance beyond aggregate metrics and identify systematic prediction errors.
+
+Residuals were calculated as:
+
+Residual = Actual Yield − Predicted Yield
+
+### Diagnostic Figures
+
+Generated figures:
+
+* `reports/figures/residuals_linear.png`
+* `reports/figures/residuals_vs_humidity.png`
+
+### Findings
+
+1. Residuals are generally centered around zero.
+2. The model captures part of the yield signal but leaves substantial unexplained variation.
+3. No severe prediction bias is observed, although prediction errors increase in some regions of the feature space.
+4. The residual spread suggests that linear regression may not fully model the underlying relationships.
+
+### Recommendation
+
+Linear Regression provides a useful baseline model. However, the moderate R² score and residual patterns indicate that a nonlinear model may achieve better performance.
+
+Recommended next step:
+
+* Train and evaluate a Random Forest Regressor.
+* Compare MAE, RMSE, and R² against the linear baseline.
+* Determine whether nonlinear feature interactions improve prediction accuracy.
+
+### Generated Reports
+
+* `reports/metrics_linear.json`
+* `reports/linear_diagnostics.md`
+
+### Generated Figures
+
+* `reports/figures/residuals_linear.png`
+* `reports/figures/residuals_vs_humidity.png`
+
+
 
