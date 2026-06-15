@@ -90,9 +90,10 @@ comparison.to_csv(
 importances = rf.feature_importances_
 
 features = [
-    "temperature_c",
-    "humidity_pct",
-    "co2_ppm"
+    "temperature_c_scaled",
+    "humidity_pct_scaled",
+    "co2_ppm_scaled",
+    "temp_humid_interaction_scaled"
 ]
 
 plt.figure(figsize=(6, 4))

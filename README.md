@@ -299,3 +299,42 @@ Recommended next step:
 
 
 
+## Reproducibility
+
+### Saved Artifacts
+
+```text
+models/
+├── random_forest.joblib
+├── minmax_scaler_train.joblib
+└── feature_cols.json
+```
+
+### Environment
+
+* Python 3.12
+* pandas
+* numpy
+* scikit-learn
+* joblib
+* matplotlib
+
+### Run Inference
+
+```bash
+python src/predict.py
+```
+
+### Example Output
+
+```text
+Predicted Yield: 17.89 kg
+```
+
+### Reproducibility Notes
+
+* Random Forest model is stored in `models/random_forest.joblib`.
+* Feature scaling uses the saved `MinMaxScaler`.
+* Model inference does not require retraining.
+* Feature order is preserved through `feature_cols.json`.
+* All model artifacts are loaded from the `models/` directory.
