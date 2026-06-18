@@ -338,3 +338,13 @@ Predicted Yield: 17.89 kg
 * Model inference does not require retraining.
 * Feature order is preserved through `feature_cols.json`.
 * All model artifacts are loaded from the `models/` directory.
+
+
+## Run Locally
+
+1. Activate virtual environment
+
+```bash
+venv\Scripts\activate
+
+
