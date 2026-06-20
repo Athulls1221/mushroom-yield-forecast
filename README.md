@@ -347,4 +347,7 @@ Predicted Yield: 17.89 kg
 ```bash
 venv\Scripts\activate
 
+## Live Demo
+
+https://mushroom-yield-forecast-apjbqtsnkmpwcwqbbbzmcz.streamlit.app
 
