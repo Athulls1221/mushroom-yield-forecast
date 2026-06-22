@@ -4,6 +4,7 @@ import pandas as pd
 # Load prediction function safely
 try:
     from src.predict import predict_yield
+    from src.logger import log_prediction
 except Exception:
     st.error("Model artifacts missing. Run the training pipeline first.")
     st.stop()
@@ -16,6 +17,7 @@ st.set_page_config(
 
 # App Title
 st.title("🍄 Polyhouse Yield Predictor")
+
 st.write(
     "Predict oyster mushroom yield using environmental sensor readings."
 )
@@ -74,6 +76,14 @@ if st.button("Predict Yield"):
             co2_ppm=co2
         )
 
+        # Log prediction
+        log_prediction(
+            temp,
+            humid,
+            co2,
+            prediction
+        )
+
         st.success("Prediction Completed!")
 
         st.metric(
@@ -104,6 +114,7 @@ with st.expander("Model Information"):
 
 # Footer
 st.markdown("---")
+
 st.caption(
     "Mushroom Yield Forecasting | Data Science Internship Project"
 )
